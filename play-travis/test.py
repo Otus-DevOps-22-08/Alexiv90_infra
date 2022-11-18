@@ -1,9 +1,6 @@
-import unittest
+import time
 
-class NumbersTest(unittest.TestCase):
-
-    def test_equal(self):
-        self.assertEqual(1 + 1, 2)
-
-if __name__ == '__main__':
-    unittest.main()
+for r in range(10):
+    print(1)
+    time.sleep(1.5)
+    print(2)
