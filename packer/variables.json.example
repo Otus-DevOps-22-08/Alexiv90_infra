@@ -1,7 +1,7 @@
 {
   "folder_id": "123211231",
   "source_image_family": "ubuntu-1604-lts",
-  "service_account_key_file": "../../key.json",
+  "service_account_key_file": "./key.json.example",
   "disk_name": "reddit-fried",
   "disk_size_gb": "10"
 }
