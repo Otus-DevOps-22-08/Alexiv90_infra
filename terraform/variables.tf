@@ -24,5 +24,5 @@ variable "service_account_key_file" {
 }
 variable "private_key" {
   description = "Path to private_key"
-  #default     = "~/.ssh/yc"
+  default     = "~/.ssh/yc"
 }
