@@ -1,0 +1,20 @@
+---
+- name: Install Ruby && Bundler && Git
+  hosts: all
+  become: true
+  tasks:
+  # Установим в цикле все зависимости
+    - name: Install ruby and rubygems and required packages
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: true
+      with_items:
+        - ruby-full
+        - ruby-bundler
+        - build-essential
+    - name: Install git
+      ansible.builtin.apt:
+        name: git
+        state: present
+        update_cache: true
