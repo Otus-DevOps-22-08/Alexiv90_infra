@@ -1,0 +1,31 @@
+---
+- name: Configure hosts & deploy application
+  hosts: app
+  become: true
+  tags: app-tag
+  vars:
+    db_host: 51.250.0.129
+  tasks:
+    - name: Add unit file for Puma
+      ansible.builtin.copy:
+        src: files/puma.service
+        dest: /etc/systemd/system/puma.service
+        mode: '0644'
+      notify: Reload puma
+
+    - name: Add config for DB connection
+      ansible.builtin.template:
+        src: templates/db_config.j2
+        dest: /home/ubuntu/db_config
+        owner: ubuntu
+        group: ubuntu
+        mode: '0644'
+    - name: Enable puma
+      ansible.builtin.systemd:
+        name: puma
+        enabled: true
+  handlers:
+    - name: Reload puma
+      ansible.builtin.systemd:
+        name: puma
+        state: restarted
