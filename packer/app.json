@@ -8,7 +8,6 @@
             "image_name": "reddit-app-{{timestamp}}",
             "image_family": "reddit-app",
             "ssh_username": "ubuntu",
-            "ssh_private_key_file": "~/.ssh/yc",
             "use_ipv4_nat": "true",
             "platform_id": "standard-v1",
             "disk_name": "{{ user `disk_name` }}",
@@ -18,10 +17,6 @@
     "provisioners": [
         {
             "type": "ansible",
-            "extra_arguments": [
-                "-e ansible_ssh_private_key_file=~/.ssh/yc"
-              ],
-            "use_proxy": false,
             "playbook_file": "ansible/playbooks/packer_app.yml"
         }
     ]
