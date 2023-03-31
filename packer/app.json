@@ -8,6 +8,7 @@
             "image_name": "reddit-app-{{timestamp}}",
             "image_family": "reddit-app",
             "ssh_username": "ubuntu",
+            "ssh_private_key_file": "~/.ssh/yc",
             "use_ipv4_nat": "true",
             "platform_id": "standard-v1",
             "disk_name": "{{ user `disk_name` }}",
@@ -16,9 +17,12 @@
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
+            "type": "ansible",
+            "extra_arguments": [
+                "-e ansible_ssh_private_key_file=~/.ssh/yc"
+              ],
+            "use_proxy": false,
+            "playbook_file": "ansible/packer_app.yml"
         }
     ]
 }

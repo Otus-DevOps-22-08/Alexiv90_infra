@@ -4,3 +4,5 @@
 *.tfvars
 .terraform/
 **/[Kk]ey.json
+*.retry
+jdauphant.nginx
