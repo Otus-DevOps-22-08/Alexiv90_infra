@@ -21,7 +21,7 @@
                 "-e ansible_ssh_private_key_file=~/.ssh/yc"
               ],
             "use_proxy": false,
-            "playbook_file": "ansible/packer_db.yml"
+            "playbook_file": "ansible/playbooks/packer_db.yml"
         }
     ]
 }
