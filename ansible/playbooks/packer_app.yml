@@ -4,6 +4,7 @@
   become: true
   tasks:
   # Установим в цикле все зависимости
+
     - name: Install ruby and rubygems and required packages
       ansible.builtin.apt:
         name: "{{ item }}"
