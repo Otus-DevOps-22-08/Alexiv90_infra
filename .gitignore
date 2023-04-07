@@ -6,3 +6,11 @@
 **/[Kk]ey.json
 *.retry
 jdauphant.nginx
+# Vagrant & molecule
+.vagrant/
+*.log
+*.pyc
+.molecule
+.cache
+.pytest_cache
+venv/
