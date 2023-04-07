@@ -5,7 +5,7 @@
 .terraform/
 **/[Kk]ey.json
 *.retry
-jdauphant.nginx
+#jdauphant.nginx
 # Vagrant & molecule
 .vagrant/
 *.log
